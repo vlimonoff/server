@@ -519,7 +519,7 @@ ul {
 }
 
 body {
-  background-image: url("../img/bg.jpg");
+  /*background-image: url("../img/bg.jpg");*/
   backdrop-filter: blur(5px);
 }
 

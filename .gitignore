@@ -1,0 +1,12 @@
+*.txt
+maps
+plugins
+node.dll
+LICENSE
+README.md
+bt.dat
+vs_project
+packages
+dotnet/runtime
+conf.json
+ragemp-server.exe

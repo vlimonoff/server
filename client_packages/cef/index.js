@@ -21,3 +21,14 @@ mp.keys.bind(0x4D, false, function() {
         mp.gui.cursor.visible = false;
     }
 })
+
+mp.keys.bind(0x73, false, function(){
+    if (!browser){
+        browser = mp.browsers.new("package://cef/shop/shop.html");
+        mp.gui.cursor.visible = true;
+    } else {
+        browser.destroy();
+        browser = null;
+        mp.gui.cursor.visible = false;
+    }
+})

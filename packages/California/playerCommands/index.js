@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 mp.events.addCommand('sethp', (player,_,target, hp)=>{
     if (target == undefined || hp == undefined) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}/sethp [player] [hp]`);
     var p = mp.players.at(target);
@@ -65,15 +67,38 @@ mp.events.addCommand('tp', (player, _, x, y, z) =>{
 });
 
 mp.events.addCommand('create', (player, _, type, size) => {
-    mp.markers.new(type, player.position, size,
-        {
-            visible: true,
-            dimension: player.dimension
-        });
+    if (type == undefined || size == undefined) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}/create [type] [size]`);
+    if (type < 1 || type > 44) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}тип может быть в промежутке от 1 до 44`);
+    
+    mp.markers.new(parseInt(type), player.position, parseFloat(size), {
+        color: [255, 0, 0, 255],
+        dimension: player.dimension,
+        visible: true
+    })
 
-        player.outputChatBox(`${player.dimension}`);
+        player.outputChatBox(`Маркер успешно создан на координатах X: ${player.position.x.toFixed(2)}, Y: ${player.position.y.toFixed(2)}, Z: ${player.position.z.toFixed(2)}`);
+        player.outputChatBox(`!{#ffcc00}dim=!{#ffffff}${player.dimension}, !{#ffcc00}type=!{#ffffff}${type}`);
 });
 
 mp.events.addCommand('h', (player,_) =>{
-    player.position = new mp.Vector3(0, 0, 75);
+    player.position = new mp.Vector3(0, 0, 72);
+})
+
+mp.events.addCommand('cp', (player,_)=>{
+    mp.checkpoints.new(1, player.position, 10,
+    {
+        direction: new mp.Vector3(0, 0, 75),
+        color: [ 255, 255, 255, 255 ],
+        visible: true,
+        dimension: 0
+    });
+})
+
+mp.events.addCommand('save', player => {
+    fs.appendFile(__dirname + '/positions.txt', `\r\n${player.position.x.toFixed(2)}, ${player.position.y.toFixed(2)}, ${player.position.z.toFixed(2)}`, function(err){
+        if(err)throw err;
+    
+        console.log('Координаты точки записаны в файл'); // выведем сообщение когда запись будет завершена
+    });
+    player.outputChatBox(`Точка успешно сохранена: !{#ffcc00}${player.position.x.toFixed(2)} ${player.position.y.toFixed(2)} ${player.position.z.toFixed(2)}!{#ffffff}.`);
 })

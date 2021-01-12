@@ -3,7 +3,7 @@ mp.events.addCommand('sethp', (player,_,target, hp)=>{
     var p = mp.players.at(target);
     if(p == null) return player.outputChatBox(`!{#FFCC00}Ошибка: !{#FFFFFF}Игрок не найден!`);
     p.health=parseInt(hp);
-})
+});
 
 mp.events.addCommand('veh',(player,_,vehName) =>{
     if (vehName == undefined) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#FFFFFF}/veh [model]`);
@@ -21,7 +21,7 @@ mp.events.addCommand('veh',(player,_,vehName) =>{
         color: [[parseInt(a), parseInt(b),  parseInt(c)],[parseInt(a), parseInt(b), parseInt(c)]],
         heading: player.heading
     })
-})
+});
 
 mp.events.addCommand('createblip',(player, BlipId, color,_,BlipName) =>{
     mp.blips.new(parseInt(BlipId), player.position,{
@@ -30,13 +30,11 @@ mp.events.addCommand('createblip',(player, BlipId, color,_,BlipName) =>{
         name: String(BlipName)
     })
     
-})
+});
 
 mp.events.addCommand("global", (player, message) => {
     mp.players.broadcast(`!{#a366ff} ${player.name}: !{#FFFFFF}${message}`);
-
-
-})
+});
 
 mp.events.addCommand("vova", (player) => {
     if (player.socialClub == "vbogachev") {
@@ -46,17 +44,36 @@ mp.events.addCommand("vova", (player) => {
     } else {
         player.outputChatBox(`!{#FF0000}Ошибка: !{#FFFFFF}У Вас нет доступа для использования данной команды!`);
     }
-})
+});
 
 mp.events.addCommand("showsocial", (player, _, target) => {
     if (target == undefined) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}/showsocial [id]`);
     var p = mp.players.at(target);
     if(p == null) return player.outputChatBox(`!{#FFCC00}Ошибка: !{#FFFFFF}Игрок не найден!`);
     console.log(`[SERVER]: SocialClub: ${p.socialClub}`);
-})
+});
 
 mp.events.addCommand('givegun', (player, _,id, weapon, ammo) =>{
     if (id == undefined || weapon == undefined || ammo == undefined) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}/givegun [id] [weapon] [ammo]`);
     let target = mp.players.at(id);
     target.giveWeapon(mp.joaat(weapon), parseInt(ammo));
+});
+
+mp.events.addCommand('tp', (player, _, x, y, z) =>{
+    if (x == undefined || y == undefined || z == undefined) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}/tp [x] [y] [z]`);
+    player.position = new mp.Vector3(parseInt(x), parseInt(y), parseInt(z));
+});
+
+mp.events.addCommand('create', (player, _, type, size) => {
+    mp.markers.new(type, player.position, size,
+        {
+            visible: true,
+            dimension: player.dimension
+        });
+
+        player.outputChatBox(`${player.dimension}`);
+});
+
+mp.events.addCommand('h', (player,_) =>{
+    player.position = new mp.Vector3(0, 0, 75);
 })

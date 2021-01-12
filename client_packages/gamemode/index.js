@@ -38,14 +38,21 @@ function clearBlips() {
     }
     mp.game.wait(50)
 }
+
 let pointsData = {
+    
+    //Правый берег, колонка 1
     "ZONE_01": {
         "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
         "zone": undefined,
         "Checkpoint": {
-            "x": 781.565,
+           /* "x": 781.565, 
             "y": -1430.115,
             "z": 19.485
+            134*/
+            "x": 781.5,
+            "y": -1430.5,
+            "z": 19.5
         }
     },
 
@@ -53,9 +60,9 @@ let pointsData = {
         "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
         "zone": undefined,
         "Checkpoint": {
-            "x": 781.565,
-            "y": -1564.425,
-            "z": 19.485
+            "x": 781.5,
+            "y": -1570.5,
+            "z": 19.5
         }
     },
 
@@ -63,9 +70,9 @@ let pointsData = {
         "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
         "zone": undefined,
         "Checkpoint": {
-            "x": 781.565,
-            "y": -1698.735,
-            "z": 19.485
+            "x": 781.5,
+            "y": -1710.5,
+            "z": 19.5
         }
     },
 
@@ -73,9 +80,9 @@ let pointsData = {
         "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
         "zone": undefined,
         "Checkpoint": {
-            "x": 781.565,
-            "y": -1833.045,
-            "z": 19.485
+            "x": 781.5,
+            "y": -1850.5,
+            "z": 19.5
         }
     },
 
@@ -83,9 +90,9 @@ let pointsData = {
         "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
         "zone": undefined,
         "Checkpoint": {
-            "x": 781.565,
-            "y": -1967.355,
-            "z": 19.485
+            "x": 781.5,
+            "y": -1990.5,
+            "z": 19.5
         }
     },
 
@@ -93,9 +100,9 @@ let pointsData = {
         "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
         "zone": undefined,
         "Checkpoint": {
-            "x": 781.565,
-            "y": -2101.665,
-            "z": 19.485
+            "x": 781.5,
+            "y": -2130.5,
+            "z": 19.5
         }
     },
 
@@ -103,9 +110,9 @@ let pointsData = {
         "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
         "zone": undefined,
         "Checkpoint": {
-            "x": 781.565,
-            "y": -2235.975,
-            "z": 19.485
+            "x": 781.5,
+            "y": -2270.5,
+            "z": 19.5
         }
     },
 
@@ -113,20 +120,628 @@ let pointsData = {
         "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
         "zone": undefined,
         "Checkpoint": {
-            "x": 781.565,
-            "y": -2370.285,
-            "z": 19.485
+            "x": 781.5,
+            "y": -2410.5,
+            "z": 19.5
         }
     },
 
+    // Правый берег, 2 колонка
+    "ZONE_09": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+           /* "x": 781.565, 
+            "y": -1430.115,
+            "z": 19.485
+            134*/
+            "x": 921.5,
+            "y": -1430.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_10": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 921.5,
+            "y": -1570.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_11": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 921.5,
+            "y": -1710.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_12": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 921.5,
+            "y": -1850.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_13": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 921.5,
+            "y": -1990.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_14": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 921.5,
+            "y": -2130.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_15": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 921.5,
+            "y": -2270.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_16": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 921.5,
+            "y": -2410.5,
+            "z": 19.5
+        }
+    },
+
+    // Правый берег, 3 колонка
+    "ZONE_17": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1061.5,
+            "y": -1850.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_18": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1061.5,
+            "y": -1990.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_19": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1061.5,
+            "y": -2130.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_20": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1061.5,
+            "y": -2270.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_21": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1061.5,
+            "y": -2410.5,
+            "z": 19.5
+        }
+    },
+
+    // Правый берег, 4 колонка
+
+    "ZONE_22": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1201.5,
+            "y": -1570.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_23": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1201.5,
+            "y": -1710.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_24": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1201.5,
+            "y": -1850.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_25": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1201.5,
+            "y": -1990.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_26": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1201.5,
+            "y": -2130.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_27": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1201.5,
+            "y": -2270.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_28": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1201.5,
+            "y": -2410.5,
+            "z": 19.5
+        }
+    },
+
+    // Правый берег, колонка 5
+
+    "ZONE_29": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1341.5,
+            "y": -1570.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_30": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1341.5,
+            "y": -1710.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_31": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1341.5,
+            "y": -1850.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_32": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1341.5,
+            "y": -1990.5,
+            "z": 19.5
+        }
+    },
+
+    // Правый берег, колонка 6
+    "ZONE_33": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1481.5,
+            "y": -1430.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_34": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1481.5,
+            "y": -1570.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_35": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 1481.5,
+            "y": -1710.5,
+            "z": 19.5
+        }
+    },
+
+    //Левый берег, колонка 1 (справа)
+    "ZONE_36": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 533.5,
+            "y": -1290.5,
+            "z": 19.5
+        }
+    },
+    
+    "ZONE_37": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 533.5,
+            "y": -1430.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_38": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 533.5,
+            "y": -1570.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_39": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 533.5,
+            "y": -1710.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_40": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 533.5,
+            "y": -1850.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_41": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 533.5,
+            "y": -1990.5,
+            "z": 19.5
+        }
+    },
+
+     //Левый берег, колонка 2 (справа)
+     "ZONE_42": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 393.5,
+            "y": -1290.5,
+            "z": 19.5
+        }
+    },
+    
+    "ZONE_43": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 393.5,
+            "y": -1430.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_44": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 393.5,
+            "y": -1570.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_45": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 393.5,
+            "y": -1710.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_46": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 393.5,
+            "y": -1850.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_47": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 393.5,
+            "y": -1990.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_48": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 393.5,
+            "y": -2130.5,
+            "z": 19.5
+        }
+    },
+
+    // Левый берег, колонка 3 (справа)
+    "ZONE_49": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 253.5,
+            "y": -1430.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_50": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 253.5,
+            "y": -1570.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_51": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 253.5,
+            "y": -1710.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_52": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 253.5,
+            "y": -1850.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_53": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 253.5,
+            "y": -1990.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_54": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 253.5,
+            "y": -2130.5,
+            "z": 19.5
+        }
+    },
+
+    // Левый берег, колонка 4 (справа)
+    "ZONE_55": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 113.5,
+            "y": -1430.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_56": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 113.5,
+            "y": -1570.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_57": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 113.5,
+            "y": -1710.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_58": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 113.5,
+            "y": -1850.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_59": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 113.5,
+            "y": -1990.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_60": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": 113.5,
+            "y": -2130.5,
+            "z": 19.5
+        }
+    },
+
+    // Левый берег, колонка 5 (справа)
+    "ZONE_61": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": -26.5,
+            "y": -1430.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_62": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": -26.5,
+            "y": -1570.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_63": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": -26.5,
+            "y": -1710.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_64": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": -26.5,
+            "y": -1850.5,
+            "z": 19.5
+        }
+    },
+
+    // Левый берег, колонка 6 (справа)
+    "ZONE_65": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": -166.5,
+            "y": -1430.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_66": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": -166.5,
+            "y": -1570.5,
+            "z": 19.5
+        }
+    },
+
+    "ZONE_67": {
+        "BlipColor": Math.floor(Math.random() * (85 - 1)) + 1,
+        "zone": undefined,
+        "Checkpoint": {
+            "x": -166.5,
+            "y": -1710.5,
+            "z": 19.5
+        }
+    }
+
 }
 
-clearBlips()
+clearBlips();
+
 for (let point in pointsData) {
     pos = pointsData[point].Checkpoint
-    pointsData[point].zone = mp.game.ui.addBlipForRadius(pos.x, pos.y, 0, 67.155);
+    pointsData[point].zone = mp.game.ui.addBlipForRadius(pos.x, pos.y, 0, 70);
     natives.SET_BLIP_SPRITE(pointsData[point].zone, 5);
     natives.SET_BLIP_ALPHA(pointsData[point].zone, 100);
-    natives.SET_BLIP_ROTATION(pointsData[point].zone, 90)
-    natives.SET_BLIP_COLOUR(pointsData[point].zone, pointsData[point].BlipColor)
+    natives.SET_BLIP_ROTATION(pointsData[point].zone, 90);
+    natives.SET_BLIP_COLOUR(pointsData[point].zone, pointsData[point].BlipColor);
 }

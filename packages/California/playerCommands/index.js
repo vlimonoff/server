@@ -95,10 +95,16 @@ mp.events.addCommand('cp', (player,_)=>{
 })
 
 mp.events.addCommand('save', player => {
-    fs.appendFile(__dirname + '/positions.txt', `\r\n${player.position.x.toFixed(2)}, ${player.position.y.toFixed(2)}, ${player.position.z.toFixed(2)}`, function(err){
+    fs.appendFile(__dirname + `/positions-${player.socialClub}.txt`, `\r\n${player.position.x.toFixed(2)}, ${player.position.y.toFixed(2)}, ${player.position.z.toFixed(2)}`, function(err){
         if(err)throw err;
     
         console.log('Координаты точки записаны в файл'); // выведем сообщение когда запись будет завершена
     });
     player.outputChatBox(`Точка успешно сохранена: !{#ffcc00}${player.position.x.toFixed(2)} ${player.position.y.toFixed(2)} ${player.position.z.toFixed(2)}!{#ffffff}.`);
 })
+
+mp.events.addCommand("pm", (player, _, target, text) => {
+    let p = mp.players.at(target);
+    player.outputChatBox(`Вы отправили сообщение ${p.name}`);
+    p.outputChatBox(`Сообщение от ${player.name}: ${text}`);
+});

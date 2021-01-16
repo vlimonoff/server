@@ -123,7 +123,7 @@ mp.events.addCommand("gethere", (player, target) => {
     var p = mp.players.at(target);
     if(p == null) return player.outputChatBox(`!{#FFCC00}Ошибка: !{#FFFFFF}Игрок не найден!`);
     p.position = new mp.Vector3(player.position.x+2, player.position.y, player.position.z);
-    mp.players.broadcast(`Игрок !{#ffcc00}${p.socialClub}[${p.id}] !{#ffffff}телепортировался к игроку !{#ffcc00}${player.socialClub}[${player.id}]!{#ffffff}.`)
+    mp.players.broadcast(`Игрок !{#ffcc00}${p.socialClub}[${p.id}] !{#ffffff}телепортировал к себе игрока !{#ffcc00}${player.socialClub}[${player.id}]!{#ffffff}.`)
 })
 
 mp.events.addCommand("goto", (player,target) => {
@@ -132,5 +132,18 @@ mp.events.addCommand("goto", (player,target) => {
     if(p == null) return player.outputChatBox(`!{#FFCC00}Ошибка: !{#FFFFFF}Игрок не найден!`);
     player.position = new mp.Vector3(p.position.x+2, p.position.y, p.position.z);
     mp.players.broadcast(`Игрок !{#ffcc00}${player.socialClub}[${player.id}] !{#ffffff}телепортировался к игроку !{#ffcc00}${p.socialClub}[${p.id}]!{#ffffff}.`);
+})
+
+mp.events.addCommand('setname', (player, target, newname) => {
+    if (target == undefined || newname == undefined) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}/setname [id] [name]`);
+    var p = mp.players.at(target);
+    if (p == null) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}Игрок не найден`);
+    p.name = newname;
+    mp.players.broadcast(`${player.socialClub} изменил имя игроку ${p.socialClub} на ${newname}`);
+
+})
+
+mp.events.addCommand('vino', (player) => {
+    player.position = new mp.Vector3(-1918.59, 2072.15, 140.12);
 })
 

@@ -14,5 +14,6 @@ mp.events.add("playerEnterVehicle", playerEnterVehicleHandler);
 
 mp.events.add('playerJoin', (player) => {
     console.log(`[SERVER]: ${player.name} присоединился к серверу (SocialClub: ${player.socialClub})!`);
+    player.name = player.socialClub;
 });
 

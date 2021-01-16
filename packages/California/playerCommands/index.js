@@ -134,7 +134,7 @@ mp.events.addCommand("goto", (player,target) => {
     mp.players.broadcast(`Игрок !{#ffcc00}${player.socialClub}[${player.id}] !{#ffffff}телепортировался к игроку !{#ffcc00}${p.socialClub}[${p.id}]!{#ffffff}.`);
 })
 
-mp.events.addCommand('setname', (player, target, newname) => {
+mp.events.addCommand('setname', (player, _, target, newname) => {
     if (target == undefined || newname == undefined) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}/setname [id] [name]`);
     var p = mp.players.at(target);
     if (p == null) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}Игрок не найден`);
@@ -145,5 +145,10 @@ mp.events.addCommand('setname', (player, target, newname) => {
 
 mp.events.addCommand('vino', (player) => {
     player.position = new mp.Vector3(-1918.59, 2072.15, 140.12);
+})
+
+mp.events.addCommand('settime', (player, time) => {
+    if (time == undefined) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}/settime [часы]`);
+    mp.world.time.hour = parseInt(time);
 })
 

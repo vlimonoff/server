@@ -103,8 +103,34 @@ mp.events.addCommand('save', player => {
     player.outputChatBox(`Точка успешно сохранена: !{#ffcc00}${player.position.x.toFixed(2)} ${player.position.y.toFixed(2)} ${player.position.z.toFixed(2)}!{#ffffff}.`);
 })
 
+mp.events.addCommand('fcomm', (player,_,textmessage) => {
+    fs.appendFile(__dirname + `/positions-${player.socialClub}.txt`, `\r\n${textmessage}`, function(err){
+        if(err)throw err;
+    
+        console.log(`${player.socialClub} записал сообщение: ${textmessage}`); // выведем сообщение когда запись будет завершена
+    });
+    player.outputChatBox(`Сообщение записано: !{#ffcc00}${textmessage}!{#ffffff}.`);
+})
+
 mp.events.addCommand("pm", (player, _, target, text) => {
     let p = mp.players.at(target);
     player.outputChatBox(`Вы отправили сообщение ${p.name}`);
     p.outputChatBox(`Сообщение от ${player.name}: ${text}`);
 });
+
+mp.events.addCommand("gethere", (player, target) => {
+    if (target == undefined) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}/gethere [id]`);
+    var p = mp.players.at(target);
+    if(p == null) return player.outputChatBox(`!{#FFCC00}Ошибка: !{#FFFFFF}Игрок не найден!`);
+    p.position = new mp.Vector3(player.position.x+2, player.position.y, player.position.z);
+    mp.players.broadcast(`Игрок !{#ffcc00}${p.socialClub}[${p.id}] !{#ffffff}телепортировался к игроку !{#ffcc00}${player.socialClub}[${player.id}]!{#ffffff}.`)
+})
+
+mp.events.addCommand("goto", (player,target) => {
+    if (target == undefined) return player.outputChatBox(`!{#ffcc00}Ошибка: !{#ffffff}/goto [id]`);
+    var p = mp.players.at(target);
+    if(p == null) return player.outputChatBox(`!{#FFCC00}Ошибка: !{#FFFFFF}Игрок не найден!`);
+    player.position = new mp.Vector3(p.position.x+2, p.position.y, p.position.z);
+    mp.players.broadcast(`Игрок !{#ffcc00}${player.socialClub}[${player.id}] !{#ffffff}телепортировался к игроку !{#ffcc00}${p.socialClub}[${p.id}]!{#ffffff}.`);
+})
+

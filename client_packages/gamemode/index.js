@@ -1,4 +1,4 @@
-mp.events.add('render', () => {
+/*mp.events.add('render', () => {
     mp.game.graphics.drawText(`X: ${mp.players.local.position.x.toFixed(2)}   Y: ${mp.players.local.position.y.toFixed(2)}   Z: ${mp.players.local.position.z.toFixed(2)}`, [0.5, 0.03],
     {
         font: 7,
@@ -6,7 +6,7 @@ mp.events.add('render', () => {
         scale: [0.3, 0.3],
         outline: true
     })
-})
+})*/
 
 let natives = {}
 

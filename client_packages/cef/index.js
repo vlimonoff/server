@@ -11,6 +11,11 @@ mp.keys.bind(0x71, true, function() {   // F2
     }
 });
 
+mp.keys.bind(0x72, true, function () {
+    mp.gui.chat.show(false);
+    mp.gui.chat.activate(false);
+})
+
 mp.keys.bind(0x4D, false, function() {
     if(!mp.players.local.isTypingInTextChat)
     {
@@ -33,5 +38,14 @@ mp.keys.bind(0x73, false, function(){
         browser.destroy();
         browser = null;
         mp.gui.cursor.visible = false;
+    }
+})
+
+mp.keys.bind(0x78, false, function(){
+    if (!browser){
+        browser = mp.browsers.new("package://cef/hud/hud.html");
+    } else {
+        browser.destroy();
+        browser = null;
     }
 })

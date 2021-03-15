@@ -152,3 +152,14 @@ mp.events.addCommand('settime', (player, time) => {
     mp.world.time.hour = parseInt(time);
 })
 
+mp.events.addCommand('beard', (player, _, value, color1, color2) => {
+    let firstColor = 0;
+    let secondColor = 0;
+    player.outputChatBox(`value = ${value}, color1 = ${color1}, color2 = ${color2}`);
+    if (isNaN(value) || isNaN (color1) || isNaN(color2)) return player.outputChatBox(`Введены некорректные значения!`);
+    
+    firstColor = parseInt(color1);
+    secondColor = parseInt(color2);
+
+    player.setHeadOverlay(1, [parseInt(value), 1, firstColor, secondColor]);
+})

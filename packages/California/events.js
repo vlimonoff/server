@@ -6,6 +6,10 @@ mp.events.add('playerDeath', (player) => {
     console.log(`Игрок ${player.name} заспавнился (SocialClub: ${player.socialClub})`);
 });
 
+mp.events.add("playerDamage", (player, healthLoss, armorLoss) => {
+    mp.players.broadcast(`!{#FFCC00}${player.socialClub} !{#FFFFFF}потерял !{#FFCC00}${healthLoss} hp!{#FFFFFF}, и !{#FFCC00}${armorLoss} !{#FFFFFF}брони.`);
+});
+
 function playerEnterVehicleHandler(player, vehicle, seat) {
 	player.outputChatBox(`${player.name} got into the car with ID: ${vehicle.id}. Seat: ${seat}`);
 }
